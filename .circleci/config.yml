@@ -1,11 +1,17 @@
 version: 2.1
+orbs:
+   node: circleci/node@5.0.2
 jobs:
    build:
       docker:
          - image: alpine:3.16
       steps:
+         - checkout
+         - node/install-packages:
+            pkg-manager: yarn
          - run:
-              name: step 1
-              command: |
-                 echo "Hello sailor",
-                 echo "delivery pipe"
+            name: unit tests
+            command: yarn test:unit
+         - run:
+            name: integration tests
+            command: yarn test:int
