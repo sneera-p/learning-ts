@@ -1,0 +1,11 @@
+version: 2.1
+jobs:
+   build:
+      docker:
+         - image: alpine:3.16
+      steps:
+         - run:
+              name: step 1
+              command: |
+                 echo "Hello sailor",
+                 echo "delivery pipe"
