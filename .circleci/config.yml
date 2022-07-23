@@ -4,11 +4,12 @@ orbs:
 jobs:
    build:
       docker:
-         - image: alpine:3.16
+         - image: node:16
       steps:
          - checkout
-         - node/install-packages:
-            pkg-manager: yarn
+         - run:
+            name: install packages
+            command: yarn install
          - run:
             name: unit tests
             command: yarn test:unit
