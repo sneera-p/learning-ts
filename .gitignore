@@ -1,8 +1,9 @@
-node_modules/
+.config/jest/coverage
+.config/tokens
+.ssh/
 .tmp/
 bin/
 dist/
-.config/jest/coverage
-.config/tokens
+node_modules/
 
 yarn-error.log
