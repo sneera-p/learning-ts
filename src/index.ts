@@ -16,7 +16,7 @@ function getEnvPath(args: string[] = process.argv): string {
    });
 
    const app = await startup({
-      logFileSream: createWriteStream(process.env.LOG_FILE),
+      logFileSream: createWriteStream(resolve(process.cwd(), process.env.LOG_FILE)),
    });
 
    let server: http.Server = http.createServer(app);
