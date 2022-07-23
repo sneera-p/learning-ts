@@ -6,7 +6,6 @@ import { startServer, shutdownServer, startup } from "./startup";
 
 function getEnvPath(args: string[] = process.argv): string {
    const i = args.findIndex((e) => /^(-e|--env-file)$/i.test(e));
-   console.log(i);
    return i === -1 ? ".env" : args[i + 1];
 }
 
